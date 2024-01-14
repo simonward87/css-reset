@@ -1,0 +1,174 @@
+/* system font stacks provided by https://modernfontstacks.com/ */
+
+:root {
+  color-scheme: only light;
+
+  /* foreground */
+  --clr-fg-0: #151515;
+  --clr-fg-1: #3f3f3f;
+  --clr-fg-2: #696969;
+
+  /* background */
+  --clr-bg-0: #ffffff;
+  --clr-bg-1: #f5f5f5;
+  --clr-bg-2: #eaeaea;
+
+  /* padding */
+  --spc-0: 5px;
+  --spc-1: calc(var(--spc-0) * 2);
+  --spc-2: calc(var(--spc-0) * 4);
+  --spc-3: calc(var(--spc-0) * 8);
+  --spc-4: calc(var(--spc-0) * 16);
+  --spc-5: calc(var(--spc-0) * 24);
+
+  --site-width: 60ch;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Increase base font-size to 18px */
+html {
+  font-size: large;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--spc-3);
+}
+
+body {
+  background-color: var(--clr-bg-0);
+  color: var(--clr-fg-1);
+  font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
+    Arial, sans-serif;
+  font-weight: normal;
+  line-height: 1.5;
+  margin: 0 auto;
+  /* this max-width is unlikely to be useful in a real site - instead, */
+  /* it is intended as a starting point */
+  max-width: var(--site-width);
+  min-height: 100svh;
+  overflow-wrap: break-word;
+  padding: var(--spc-2);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--clr-fg-0);
+  line-height: 1.2;
+  /* -0.2em to remove space above text created by line-height */
+  margin: calc(var(--spc-3) - 0.2em) 0 var(--spc-2);
+}
+
+p {
+  margin: var(--spc-1) 0;
+}
+
+strong {
+  color: var(--clr-fg-0);
+}
+
+ul,
+ol {
+  margin: var(--spc-1) 0;
+}
+
+pre {
+  background: var(--clr-bg-1);
+  border: 1px solid var(--clr-bg-2);
+  color: var(--clr-fg-1);
+  font-size: smaller;
+  line-height: 1.4;
+  overflow-x: scroll;
+  padding: var(--spc-2);
+}
+
+code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+    "DejaVu Sans Mono", monospace;
+  font-weight: normal;
+}
+
+/* Reduced font-size for very small screens */
+@media screen and (max-width: 320px) {
+  html {
+    font-size: medium;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: only dark;
+
+    /* foreground */
+    --clr-fg-0: #ebebeb;
+    --clr-fg-1: #c2c2c2;
+    --clr-fg-2: #999999;
+
+    /* background */
+    --clr-bg-0: #1e1e1e;
+    --clr-bg-1: #282828;
+    --clr-bg-2: #323232;
+  }
+
+  body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Remove all animations, transitions and smooth scroll for people */
+/* that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
