@@ -1,0 +1,128 @@
+:root {
+  color-scheme: only light;
+
+  /* foreground */
+  --clr-fg-0: #151515;
+  --clr-fg-1: #3f3f3f;
+  --clr-fg-2: #696969;
+
+  /* background */
+  --clr-bg-0: #ffffff;
+  --clr-bg-1: #f5f5f5;
+  --clr-bg-2: #eaeaea;
+
+  /* padding */
+  --spc-0: 2.5px;
+  --spc-1: calc(var(--spc-0) * 2);
+  --spc-2: calc(var(--spc-0) * 4);
+  --spc-3: calc(var(--spc-0) * 8);
+  --spc-4: calc(var(--spc-0) * 16);
+  --spc-5: calc(var(--spc-0) * 32);
+
+  --doc-width: 56ch;
+}
+
+/* Set root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--spc-3);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--clr-bg-1);
+  color: var(--clr-fg-1);
+  font-family: system-ui, sans-serif;
+  font-weight: normal;
+  min-height: 100svh;
+  padding-inline: var(--spc-3);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--clr-fg-0);
+}
+
+p {
+  font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+  font-size: 1.0625rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+code {
+  background-color: var(--clr-bg-0);
+  border-radius: var(--spc-1);
+  border: 1px solid #00000022;
+  padding: 0.15em 0.3em;
+}
+
+pre {
+  background-color: var(--clr-bg-0);
+  border-radius: var(--spc-1);
+  border: 1px solid #00000022;
+  padding: var(--spc-3);
+}
+
+pre code {
+  border: none;
+  background-color: none;
+  padding: initial;
+}
+
+strong {
+  color: var(--clr-fg-0);
+}
+
+main {
+  padding-block: var(--spc-4);
+}
+
+.container {
+  margin-inline: auto;
+  max-width: var(--doc-width);
+}
+
+main .container > :first-child {
+  margin-top: -0.25em;
+}
+
+main .container > :last-child {
+  margin-bottom: -0.25em;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: only dark;
+
+    /* foreground */
+    --clr-fg-0: #ebebeb;
+    --clr-fg-1: #c2c2c2;
+    --clr-fg-2: #999999;
+
+    /* background */
+    --clr-bg-0: #1e1e1e;
+    --clr-bg-1: #282828;
+    --clr-bg-2: #323232;
+  }
+
+  body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@media screen and (min-width: 600px) and (orientation: landscape) {
+  html {
+    font-size: 1.0625rem;
+  }
+}
