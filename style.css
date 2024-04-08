@@ -19,6 +19,14 @@
   --spc-4: calc(var(--spc-0) * 16);
   --spc-5: calc(var(--spc-0) * 32);
 
+  /* text-spacing */
+  --txt-spc-0: 0.128em;
+  --txt-spc-1: 0.272em;
+  --txt-spc-2: 0.618em;
+  --txt-spc-3: 1em;
+  --txt-spc-4: 1.618em;
+  --txt-spc-5: 2.618em;
+
   --doc-width: 56ch;
 }
 
@@ -26,12 +34,6 @@
 html:focus-within {
   scroll-behavior: smooth;
   scroll-padding-top: var(--spc-3);
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
 }
 
 body {
