@@ -56,9 +56,15 @@ h6 {
 
 p {
   font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
-  font-size: 1.0625rem;
+  /* 16-18px, 280-600px boundaries */
+  font-size: clamp(1rem, 0.65vi + 0.89rem, 1.125rem);
   font-weight: normal;
   line-height: 1.4;
+  margin-block: var(--txt-spc-2);
+}
+
+ul {
+  margin-block: var(--txt-spc-2);
 }
 
 code {
@@ -72,6 +78,7 @@ pre {
   background-color: var(--clr-bg-0);
   border-radius: var(--spc-1);
   border: 1px solid #00000022;
+  margin-block: var(--txt-spc-3);
   padding: var(--spc-3);
 }
 
@@ -102,6 +109,15 @@ main .container > :last-child {
   margin-bottom: -0.25em;
 }
 
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
+  margin-block: var(--txt-spc-4) var(--txt-spc-2);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: only dark;
@@ -115,16 +131,5 @@ main .container > :last-child {
     --clr-bg-0: #1e1e1e;
     --clr-bg-1: #282828;
     --clr-bg-2: #323232;
-  }
-
-  body {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-  }
-}
-
-@media screen and (min-width: 600px) and (orientation: landscape) {
-  html {
-    font-size: 1.0625rem;
   }
 }
