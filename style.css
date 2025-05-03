@@ -30,6 +30,10 @@
   --doc-width: 56ch;
 }
 
+html {
+  height: 100%;
+}
+
 html:focus-within {
   scroll-behavior: smooth;
   scroll-padding-top: var(--spc-2);
@@ -39,7 +43,7 @@ body {
   background-color: var(--clr-bg-1);
   color: var(--clr-fg-1);
   font-family: system-ui, sans-serif;
-  min-height: 100dvh;
+  min-height: 100%;
   overflow-wrap: break-word;
   padding-inline: var(--spc-2);
 }
