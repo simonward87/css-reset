@@ -1,21 +1,28 @@
 *,
-::before,
-::after {
+::after,
+::before {
   box-sizing: border-box;
-  text-rendering: geometricPrecision;
 }
 
 html {
-  font-family: system-ui, sans-serif;
-  line-height: 1.15;
-  tab-size: 4;
   -webkit-text-size-adjust: 100%;
+  font-family: system-ui, sans-serif;
+  height: 100%;
+  line-height: 1.1875;
+  overflow-wrap: anywhere;
+  tab-size: 4;
+  text-rendering: geometricPrecision;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--spc-2);
 }
 
 img,
 picture {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 input,
@@ -23,18 +30,24 @@ button,
 textarea,
 select {
   font: inherit;
+  overflow-wrap: inherit;
+  text-rendering: inherit;
 }
 
+blockquote,
 body,
+dd,
+dl,
+figure,
 h1,
 h2,
 h3,
 h4,
+ol,
 p,
-figure,
-blockquote,
-dl,
-dd {
+pre,
+samp,
+table ul {
   margin: 0;
 }
 
@@ -48,9 +61,14 @@ kbd,
 samp,
 pre {
   /* system font stack provided by https://modernfontstacks.com/ */
-  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
-    "DejaVu Sans Mono", monospace;
-  font-size: 0.875rem;
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
+    Consolas, "DejaVu Sans Mono", monospace;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+body {
+  min-height: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
